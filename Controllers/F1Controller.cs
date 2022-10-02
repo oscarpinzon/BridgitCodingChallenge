@@ -23,8 +23,13 @@ namespace BridgitCodingChallenge.Controllers
         
 
         [HttpGet("{year}/standings")]
-        public IEnumerable<DriverStanding> GetStandings()
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public ActionResult<List<DriverStanding>> GetStandings(int year)
         {
+            if (year != 2021)
+                return BadRequest("Only year allowed is 2021");
+
             Root root = JsonFileReader.Read<Root>("Data/driverStandings.json");
             return root.DriverStandings;
         }

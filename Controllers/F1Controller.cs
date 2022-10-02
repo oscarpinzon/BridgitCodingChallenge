@@ -14,8 +14,16 @@ namespace BridgitCodingChallenge.Controllers
             _logger = logger;
         }
 
+        [HttpGet("")]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public IActionResult GetRoot()
+        {
+            return BadRequest("Please use routes 'api/f1/{year}/standings' or 'api/f1/{year}/{round}/results'");
+        }
+        
+
         [HttpGet("{year}/standings")]
-        public IEnumerable<DriverStanding> Get()
+        public IEnumerable<DriverStanding> GetStandings()
         {
             Root root = JsonFileReader.Read<Root>("Data/driverStandings.json");
             return root.DriverStandings;

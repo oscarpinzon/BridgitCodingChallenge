@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using BridgitCodingChallenge.Models;
+using Microsoft.AspNetCore.Mvc;
 using System.Text.Json;
 
 namespace BridgitCodingChallenge.Controllers

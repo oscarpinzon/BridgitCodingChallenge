@@ -1,4 +1,5 @@
-﻿// Root myDeserializedClass = JsonConvert.DeserializeObject<Root>(myJsonResponse);
+﻿namespace BridgitCodingChallenge.Models
+{
     public class Constructor
     {
         public string constructorId { get; set; }
@@ -33,4 +34,4 @@
     {
         public List<DriverStanding> DriverStandings { get; set; }
     }
-
+}

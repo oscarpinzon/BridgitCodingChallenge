@@ -18,9 +18,9 @@ namespace BridgitCodingChallenge.Controllers
 
         [HttpGet("")]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public IActionResult GetRoot()
+        public IActionResult Get()
         {
-            return BadRequest(new { message = "Please use routes 'api/f1/{year}/standings' or 'api/f1/{year}/{round}/results'" });
+            return BadRequest(new { message = "Please use routes 'api/f1/{year}/standings' or 'api/f1/{year}/{round}/results'", status = StatusCodes.Status400BadRequest });
         }
 
 
